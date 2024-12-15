@@ -10,6 +10,7 @@ import { User } from 'src/app/core/models/User';
 })
 export class LoginComponent {
   user = new User ;
+  authbuttons : any
 
   constructor(private authService: AuthentificationService, private router: Router, private route: ActivatedRoute) {}
 
@@ -29,6 +30,18 @@ export class LoginComponent {
            this.router.navigate(['user/dashboard'])
           
         }
+
+        
+        this.authbuttons = document.getElementById("authbuttons")
+        if(localStorage.getItem('role') && localStorage.getItem('access_token')) {
+          console.log("hello", this.authbuttons);
+          this.authbuttons.classList.add("d-none");
+        }
+        else  {
+          console.log("hello", this.authbuttons);
+          this.authbuttons.classList.remove("d-none");
+        }
+        
       }
 
     )

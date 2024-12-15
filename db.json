@@ -183,6 +183,22 @@
         "92236925"
       ],
       "id": 14
+    },
+    {
+      "email": "sami@gmail.com",
+      "password": "$2a$10$jZUlBAR3hXq4Kjvohi8ZCe2PKuetnbyO2IoiZPm.gUB6G64a8.M/S",
+      "firstName": "fgsg",
+      "lastName": "fdgdf",
+      "role": "role_admin",
+      "address": {
+        "street": "gfg",
+        "city": "fdfgf",
+        "zipCode": "fdf"
+      },
+      "phoneNumbers": [
+        "56478932"
+      ],
+      "id": 15
     }
   ]
 }
