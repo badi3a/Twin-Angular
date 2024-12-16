@@ -23,23 +23,11 @@ export class LoginComponent {
         localStorage.setItem('role', response.user.role);
         if(response.user.role == "role_simpleuser") {
            this.router.navigate(['user/profile'])
-          
         }
 
         if(response.user.role == "role_admin") {
            this.router.navigate(['user/dashboard'])
           
-        }
-
-        
-        this.authbuttons = document.getElementById("authbuttons")
-        if(localStorage.getItem('role') && localStorage.getItem('access_token')) {
-          console.log("hello", this.authbuttons);
-          this.authbuttons.classList.add("d-none");
-        }
-        else  {
-          console.log("hello", this.authbuttons);
-          this.authbuttons.classList.remove("d-none");
         }
         
       }
