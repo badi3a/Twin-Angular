@@ -30,10 +30,10 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/announcement/list" routerLinkActive="active" aria-label="Go to Announcement">Announcement</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item"  *ngIf="isLoggedin">
           <a class="nav-link" routerLink="/announcement/new" routerLinkActive="active" aria-label="Go to Hello">New Announcement</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item"  *ngIf="isLoggedin">
         <a class="nav-link" routerLink="/announcement/favorit" routerLinkActive="active" aria-label="Go to Hello">Favorit List</a>
       </li>
         <li class="nav-item">
