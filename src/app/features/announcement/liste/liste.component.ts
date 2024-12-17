@@ -13,11 +13,14 @@ export class ListeComponent implements OnInit {
   list: Announcement[];
 
   constructor (private announcementService:AnnouncementService , private route: ActivatedRoute){}
-  filter = this.route.snapshot.queryParamMap.get('title');
+  title = this.route.snapshot.queryParamMap.get('title');
+  category = this.route.snapshot.queryParamMap.get('category');
   ngOnInit(): void {
-    this.filter = this.route.snapshot.queryParamMap.get('title');
-    if (this.filter) {
-      this.announcementService.searchAnnouncement(this.filter).subscribe(
+    this.title = this.route.snapshot.queryParamMap.get('title');
+    this.category = this.route.snapshot.queryParamMap.get('category')
+
+    if (this.title) {
+      this.announcementService.searchAnnouncement(this.title , this.category ? this.category : '').subscribe(
         (data: Announcement[]) => {
           this.list = data;
           console.log('Filtered Announcements:', this.list);

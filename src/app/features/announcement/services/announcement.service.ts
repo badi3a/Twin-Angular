@@ -27,8 +27,8 @@ export class AnnouncementService {
 
   //delete
   //search
-  searchAnnouncement(title: string = ''): Observable<Announcement[]> {
-    return this.http.get<Announcement[]>(`${this.urlApi}?title=${title}`) ;
+  searchAnnouncement(title: string , category : string): Observable<Announcement[]> {
+    return this.http.get<Announcement[]>(`${this.urlApi}?title=${title}&category=${category}`);
   }
 
   //getbyId
