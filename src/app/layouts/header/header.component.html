@@ -44,13 +44,14 @@
       <!-- Search Box (now part of collapsible menu) -->
       <div class="search-box">
         <button class="btn-search" aria-label="Search">
-          <i class="fa fa-search"></i>
+          <i class="fa fa-search" (click)="search()"></i>
         </button>
         <input
           type="text"
           class="input-search nav-search"
           placeholder="Type to Search..."
           aria-label="Search input"
+          [(ngModel)]="searchQuery"
         />
       </div>
 
