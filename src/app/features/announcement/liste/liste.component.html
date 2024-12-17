@@ -1,6 +1,8 @@
 <div id="parent">
   <div class="container">
+<div *ngIf="filter">
 
+</div>
     <div class="card-container">
        <app-card *ngFor="let announcement of list"
                  [a]="announcement"

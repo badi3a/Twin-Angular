@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component , OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-header",
@@ -7,13 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit  {
 
-  searchQuery: string = '';
+
+  title: string = '';
+
+  constructor(private router: Router) {}
 
   search(){
-    console.log(this.searchQuery)
+    this.router.navigate(['/announcement/list'], {
+      queryParams: {
+        title: this.title.trim() ,
+      }
+    });
   }
+  ngOnInit(): void {
+    console.log(this.title);
+  }
+
+
 
 
 
