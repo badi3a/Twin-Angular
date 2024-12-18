@@ -11,7 +11,7 @@ export class HeaderComponent {
   constructor(private authserv : AuthentificationService) {
   }
 
-  isLoggedin : boolean ;
+  isLoggedin : boolean = !!localStorage.getItem('access_token');;
 
   logout() {
     this.authserv.logout()
