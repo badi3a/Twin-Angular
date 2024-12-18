@@ -1,8 +1,8 @@
 <div id="parent">
   <div class="container">
-<div *ngIf="title ||category  ">
-
-</div>
+    <div *ngIf="(category || price || title ) && searchListExists === 0" class="alert alert-warning container m-5">
+      No results found for the given search criteria.
+    </div>
     <div class="card-container">
        <app-card *ngFor="let announcement of list"
                  [a]="announcement"

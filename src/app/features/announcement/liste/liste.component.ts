@@ -11,19 +11,23 @@ import { ActivatedRoute } from '@angular/router';
 export class ListeComponent implements OnInit {
 
   list: Announcement[];
+  searchListExists: number = 0;
+  title: string | null;
+  category: string | null;
+  price: number = 0;
 
   constructor (private announcementService:AnnouncementService , private route: ActivatedRoute){}
-  title = this.route.snapshot.queryParamMap.get('title');
-  category = this.route.snapshot.queryParamMap.get('category');
   ngOnInit(): void {
     this.title = this.route.snapshot.queryParamMap.get('title');
-    this.category = this.route.snapshot.queryParamMap.get('category')
+    this.category = this.route.snapshot.queryParamMap.get('category');
+    this.price = Number(this.route.snapshot.queryParamMap.get('price_gt')) || 0;
 
-    if (this.title) {
-      this.announcementService.searchAnnouncement(this.title , this.category ? this.category : '').subscribe(
+    if (this.title || this.category || this.price > 0) {
+      this.announcementService.searchAnnouncement(this.title ? this.title : '' , this.category ? this.category : '' , this.price ).subscribe(
         (data: Announcement[]) => {
           this.list = data;
-          console.log('Filtered Announcements:', this.list);
+          this.searchListExists = this.list.length ;
+          console.log('Filtered Announcements:', this.list , this.searchListExists);
         },
         (error) => {
           console.error('Error fetching filtered announcements:', error);

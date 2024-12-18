@@ -34,9 +34,9 @@ export class HomeComponent implements OnInit{
   search() {
     this.router.navigate(['/announcement/list'], {
       queryParams: {
-        title: this.title,
-        category: this.category,
-        price: this.price
+        title: this.title ? this.title : '' ,
+        category: this.category ? this.category : '',
+        price_gt: this.price ? this.price : null
       }
     });
     console.log('Search Params:', this.title, this.category, this.price);
