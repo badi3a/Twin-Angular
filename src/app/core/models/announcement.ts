@@ -12,5 +12,5 @@ export class Announcement{
   surface:number;
   status:string;
   roomsNumber:number;
-  isLiked : boolean = false;
+  isLiked : boolean;
 }

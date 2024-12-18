@@ -1,15 +1,19 @@
 <div id="parent">
   <div class="container">
+    <!-- Sorting Options -->
+    <div class="sorting-options">
+      <label for="sortBy">Sort By: </label>
+      <select id="sortBy" [(ngModel)]="selectedSort" (change)="sortList()">
+        <option value="newest">Newest First</option>
+        <option value="popular">Most Popular</option>
+      </select>
+    </div>
 
     <div class="card-container">
-       <app-card *ngFor="let announcement of list"
-                 [a]="announcement"
-                 (notifyParent)="addLike($event)"
-       >
-
-       </app-card>
-
+      <app-card *ngFor="let announcement of sortedList"
+                [a]="announcement"
+                (notifyParent)="addLike($event)">
+      </app-card>
     </div>
   </div>
-
 </div>

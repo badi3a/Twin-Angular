@@ -5,7 +5,6 @@ import {User} from "../../../core/models/User";
 
 @Injectable()
 export class UserService {
-  
   api:string= "http://localhost:3000";
   constructor(private http:HttpClient) { }
   //getAllusers

@@ -7,3 +7,42 @@
     padding: 20px;
 
   }
+/* Styling for the sorting container */
+.sorting-options {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Label styling */
+.sorting-options label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styling for the sort button (select element) */
+.sorting-options select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.sorting-options select:hover {
+  border-color: #888;
+  background-color: #fff;
+}
+
+/* Focus effect */
+.sorting-options select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
