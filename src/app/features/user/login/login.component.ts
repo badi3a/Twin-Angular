@@ -10,6 +10,7 @@ import { User } from 'src/app/core/models/User';
 })
 export class LoginComponent {
   user = new User ;
+  authbuttons : any
 
   constructor(private authService: AuthentificationService, private router: Router, private route: ActivatedRoute) {}
 
@@ -22,13 +23,13 @@ export class LoginComponent {
         localStorage.setItem('role', response.user.role);
         if(response.user.role == "role_simpleuser") {
            this.router.navigate(['user/profile'])
-          
         }
 
         if(response.user.role == "role_admin") {
            this.router.navigate(['user/dashboard'])
           
         }
+        
       }
 
     )

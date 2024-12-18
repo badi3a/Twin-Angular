@@ -197,6 +197,38 @@
         "92236925"
       ],
       "id": 14
+    },
+    {
+      "email": "sami@gmail.com",
+      "password": "$2a$10$jZUlBAR3hXq4Kjvohi8ZCe2PKuetnbyO2IoiZPm.gUB6G64a8.M/S",
+      "firstName": "fgsg",
+      "lastName": "fdgdf",
+      "role": "role_admin",
+      "address": {
+        "street": "gfg",
+        "city": "fdfgf",
+        "zipCode": "fdf"
+      },
+      "phoneNumbers": [
+        "56478932"
+      ],
+      "id": 15
+    },
+    {
+      "email": "Eos@gmail.com",
+      "password": "$2a$10$1oEdiKZOuPuhBpJ7nzN3SenXfb.GHRydEzvayTs2kp4PG2GoVB59a",
+      "firstName": "Recusandae Blanditi",
+      "lastName": "Omnis voluptas deser",
+      "role": "role_simpleuser",
+      "address": {
+        "street": "Magnam dignissimos e",
+        "city": "Dolor fugiat commodo",
+        "zipCode": "Exercitationem dolor"
+      },
+      "phoneNumbers": [
+        "58954588"
+      ],
+      "id": 16
     }
   ]
 }

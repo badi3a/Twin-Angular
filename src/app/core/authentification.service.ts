@@ -10,6 +10,13 @@ export class AuthentificationService {
 
   constructor(private http: HttpClient) {}
   roleAs : any;
+  
+
+
+  logout(): void {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('role');
+  }
 
  
 
