@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: '', component: AnnouncementComponent },
   {path:'new', component:FormComponent},
   {path: 'list', component:ListeComponent},
-  {path:'details/:id', component: DetailsComponent}
+  {path:'details/:id', component: DetailsComponent},
+  {path:'favorit', component: FavoritComponent}
 ];
 
 @NgModule({
