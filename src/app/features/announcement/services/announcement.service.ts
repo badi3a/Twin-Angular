@@ -5,7 +5,7 @@ import {Observable} from "rxjs";
 
 @Injectable()
 export class AnnouncementService {
-   urlApi: string= "http://localhost:3000/announcements/";
+   urlApi: string= "https://6762de1017ec5852cae7600e.mockapi.io/twinim/announcements/";
   constructor(private http:HttpClient) { }
   getLikedAnnouncement(){
     return this.http.get<Announcement[]>(`${this.urlApi}?isLiked=true`);
