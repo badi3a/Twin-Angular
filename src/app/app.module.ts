@@ -13,6 +13,7 @@ import { AnnouncementService } from './features/announcement/services/announceme
 import {AnnouncementModule} from "./features/announcement/announcement.module";
 import {CardComponent} from "./features/announcement/card/card.component";
 import {CardAnnonceComponent} from "./layouts/card-annonce/card-annonce.component";
+import { AccessDeniedComponent } from './features/access-denied/access-denied.component';
 
 
 
@@ -24,6 +25,7 @@ import {CardAnnonceComponent} from "./layouts/card-annonce/card-annonce.componen
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
+    AccessDeniedComponent,
 
   ],
   imports: [

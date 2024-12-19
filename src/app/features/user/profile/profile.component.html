@@ -1,0 +1,11 @@
+<div class="profile-container">
+  <h2>Profile</h2>
+  <div class="profile-details">
+    <p><strong>First Name:</strong> {{ user.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ user.lastName }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+<!--    <p><strong>Role:</strong> {{ user.role }}</p>-->
+  </div>
+
+  <button (click)="logout()">Logout</button>
+</div>

@@ -43,5 +43,86 @@
       "id": 5
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "hsine@exemple.com",
+      "password": "$2a$10$AWuMvFcBeSppXgR3ZI21h.n/bEj9R8dM.GLH.LchYxzXxJh/5JhRq",
+      "firstName": "hsine",
+      "lastName": "mtiraoui",
+      "role": "ROLE_USER",
+      "id": 1
+    },
+    {
+      "email": "hsine1@exemple.com",
+      "password": "$2a$10$ot1MV9aqwDUGbwq3pGbsj.DT9RhuvOLYdUUESqwjKcATawrY.3XJ.",
+      "firstName": "hsine",
+      "lastName": "mtiraoui",
+      "role": "ROLE_USER",
+      "id": 2
+    },
+    {
+      "email": "mtiraoui@exemple.com",
+      "password": "$2a$10$0u9dm/qfs77oQXD9HNjc0uYqy817IckUH3K0Y96r8rC6MJ5aMoiRW",
+      "firstName": "hsine",
+      "lastName": "mt",
+      "role": "ROLE_USER",
+      "id": 3
+    },
+    {
+      "email": "mt@exemple.om",
+      "password": "$2a$10$o0gm6qjIoLMWviIU03srvOHFN8YWyxYUbIHznHloRrmmxVJDahH9G",
+      "firstName": "hsine",
+      "lastName": "mtiraoui",
+      "role": "ROLE_USER",
+      "id": 4
+    },
+    {
+      "email": "meriam@exemple.com",
+      "password": "$2a$10$3Aurv7h0J8RINpIhV9rf0OE0mpE7CXBZpmxJjA3boa0H50KtlePqe",
+      "firstName": "meriam",
+      "lastName": "mt",
+      "role": "ROLE_USER",
+      "id": 5
+    },
+    {
+      "email": "helmi@admin.com",
+      "password": "$2a$10$JjIztHPU9hGTnA6LtrXod.ZOIC2d/HHK1si3A3tYP0tdZEr9DcZUS",
+      "firstName": "helmi",
+      "lastName": "karoui",
+      "role": "ROLE_ADMIN",
+      "id": 6
+    },
+    {
+      "email": "balkis@exemple.com",
+      "password": "$2a$10$yGp7dqJskB2eq5SA9ePn8uCmr1K9Xykoy9iDlrEW3PDV8vQad.nL2",
+      "firstName": "balkis",
+      "lastName": "karoui",
+      "role": "ROLE_USER",
+      "id": 7
+    },
+    {
+      "email": "user@user.com",
+      "password": "$2a$10$Wca3anKcAmFr4seumy/4v.Bb7uXn9/R8y4c/Viof.4f79AJrsUa1K",
+      "firstName": "test",
+      "lastName": "test",
+      "role": "ROLE_USER",
+      "id": 8
+    },
+    {
+      "email": "test@user.com",
+      "password": "$2a$10$PwZksn2XtjkLnQm9Sn70r.ZkCvC3Gd5fC5wfvk9wxdthUEfO5KP5C",
+      "firstName": "test",
+      "lastName": "test",
+      "role": "ROLE_USER",
+      "id": 9
+    },
+    {
+      "email": "wassef@test.com",
+      "password": "$2a$10$xftpGBEMsz9Ri1vb8dajeOQn1u0cyBAfoB9eTvwllhMFo563hhFDi",
+      "firstName": "wasef",
+      "lastName": "ammar",
+      "role": "ROLE_USER",
+      "id": 10
+    }
+  ]
 }

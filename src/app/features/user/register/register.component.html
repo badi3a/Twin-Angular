@@ -1,59 +1,61 @@
-<div class="container">
-  <form [formGroup]="formRegister" (ngSubmit)="save()">
+<div class="register-container">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
     <div class="form-group">
-      <label>firstName</label>
-      <input type="text" class="form-control" formControlName="firstName">
-    </div>
-    <div class="alert alert-danger" *ngIf="formRegister.get('firstName')?.invalid &&
-     formRegister.get('firstName')?.touched">
-      <div *ngIf="formRegister.get('firstName')?.hasError('required')">
-        this field is required
-      </div>
-      <div *ngIf="formRegister.get('firstName')?.hasError('minlength')">
-        please give a valid name with 3 char
+      <label for="firstName">First Name</label>
+      <input type="text" formControlName="firstName" placeholder="Enter your first name">
+      <div *ngIf="registerForm.get('firstName')?.invalid && (registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched)" class="error">
+        <div *ngIf="registerForm.get('firstName')?.errors?.['required']">First name is required.</div>
+        <div *ngIf="registerForm.get('firstName')?.errors?.['minlength']">First name must be at least 2 characters.</div>
+        <div *ngIf="registerForm.get('firstName')?.errors?.['maxlength']">First name cannot exceed 50 characters.</div>
+        <div *ngIf="registerForm.get('firstName')?.errors?.['pattern']">First name must contain only letters.</div>
       </div>
     </div>
+
     <div class="form-group">
-      <label>lastName</label>
-      <input type="text" class="form-control" formControlName="lastName">
-    </div>
-    <div class="alert alert-danger" *ngIf="formRegister.get('lastName')?.invalid &&
-     formRegister.get('lastName')?.touched">
-      <div *ngIf="formRegister.get('lastName')?.hasError('required')">
-        this field is required
-      </div>
-      <div *ngIf="formRegister.get('lastName')?.hasError('minlength')">
-        please give a valid name with 3 char
+      <label for="lastName">Last Name</label>
+      <input type="text" formControlName="lastName" placeholder="Enter your last name">
+      <div *ngIf="registerForm.get('lastName')?.invalid && (registerForm.get('lastName')?.dirty || registerForm.get('lastName')?.touched)" class="error">
+        <div *ngIf="registerForm.get('lastName')?.errors?.['required']">Last name is required.</div>
+        <div *ngIf="registerForm.get('lastName')?.errors?.['minlength']">Last name must be at least 2 characters.</div>
+        <div *ngIf="registerForm.get('lastName')?.errors?.['maxlength']">Last name cannot exceed 50 characters.</div>
+        <div *ngIf="registerForm.get('lastName')?.errors?.['pattern']">Last name must contain only letters.</div>
       </div>
     </div>
-    <div formGroupName="address">
-        <div class="form-group">
-          <label>street</label>
-          <input type="text" class="form-control" formControlName="street">
-        </div>
-      <div class="form-group">
-        <label>city</label>
-        <input type="text" class="form-control" formControlName="city">
-      </div>
-      <div class="form-group">
-        <label>Zip Code</label>
-        <input type="text" class="form-control" formControlName="zipCode">
-      </div>
-    </div>
-     <div formArrayName="phoneNumbers">
-       <div class="form-group" *ngFor="let phone of phoneNumbers.controls; let i=index">
-         <label>phone Number {{i +1}}</label>
-         <input type="text" [formControlName]="i" class="form-control">
-         <button class="btn btn-warning" (click)="removePhoneNumber(i)">-</button>
-       </div>
-       <button class="btn btn-warning" (click)="addPhoneNumber()">+</button>
 
-     </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" formControlName="email" placeholder="Enter your email">
+      <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)" class="error">
+        <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is required.</div>
+        <div *ngIf="registerForm.get('email')?.errors?.['email']">Please enter a valid email.</div>
+        <div *ngIf="registerForm.get('email')?.errors?.['maxlength']">Email cannot exceed 100 characters.</div>
+      </div>
+    </div>
 
-    <br>
-    <button class="btn btn-success" type="submit" [disabled]="formRegister.invalid" >
-      save
-    </button>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" placeholder="Enter your password">
+      <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="error">
+        <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</div>
+        <div *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters.</div>
+        <div *ngIf="registerForm.get('password')?.errors?.['maxlength']">Password cannot exceed 50 characters.</div>
+        <div *ngIf="registerForm.get('password')?.errors?.['pattern']">Password must contain at least one lowercase letter, one uppercase letter, and one digit.</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role</label>
+      <select formControlName="role">
+        <option value="">Select a role</option>
+        <option value="ROLE_USER">User</option>
+        <option value="ROLE_ADMIN">Admin</option>
+      </select>
+      <div *ngIf="registerForm.get('role')?.invalid && (registerForm.get('role')?.dirty || registerForm.get('role')?.touched)" class="error">
+        <div *ngIf="registerForm.get('role')?.errors?.['required']">Role is required.</div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
   </form>
-
 </div>
