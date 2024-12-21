@@ -13,7 +13,6 @@ import { AnnouncementService } from './features/announcement/services/announceme
 import {AnnouncementModule} from "./features/announcement/announcement.module";
 import {CardComponent} from "./features/announcement/card/card.component";
 import {CardAnnonceComponent} from "./layouts/card-annonce/card-annonce.component";
-import { AboutusComponent } from './layouts/aboutus/aboutus.component';
 
 
 
@@ -25,7 +24,6 @@ import { AboutusComponent } from './layouts/aboutus/aboutus.component';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    AboutusComponent,
 
   ],
   imports: [

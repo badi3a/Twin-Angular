@@ -1,5 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
-import { AuthentificationService } from 'src/app/core/authentification.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: "app-header",
@@ -7,13 +6,7 @@ import { AuthentificationService } from 'src/app/core/authentification.service';
   styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent {
-  
-  constructor(private authserv : AuthentificationService) {
-  }
 
-  isLoggedin : boolean = !!localStorage.getItem('access_token');;
 
-  logout() {
-    this.authserv.logout()
-  }
+
 }
