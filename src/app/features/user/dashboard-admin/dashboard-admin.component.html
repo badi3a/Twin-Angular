@@ -1,0 +1,62 @@
+<div class="container">
+    <p class="info">Nombre d'utilisateurs : {{nbUsers}}</p>
+    <p class="info">Nombre d'annonces : {{nbAnnonce}}</p>
+    
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>Prénom</th>
+          <th>Email</th>
+          <th>Rôle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.firstName}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.role}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  
+    .info {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  
+    .user-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #f2f2f2;
+    }
+  
+    th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+    }
+  
+    td {
+      border-right: 1px solid #f2f2f2;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+  

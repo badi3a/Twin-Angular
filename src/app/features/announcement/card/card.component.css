@@ -1,0 +1,170 @@
+
+/* Carte */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Image de la carte */
+.card-image {
+  width: 100%;
+  height: 250px;  /* Augmenter la hauteur de l'image pour qu'elle soit plus visible */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.card-image:hover {
+  transform: scale(1.01);
+}
+
+/* Corps de la carte */
+.card-body {
+  padding: 15px;
+}
+
+/* Titre de la carte */
+.card-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;  /* Couleur de texte plus foncée pour mieux contraster */
+  margin-bottom: 12px;
+}
+
+/* Catégorie de la carte */
+.card-category {
+  font-size: 1rem;
+  color: #777;  /* Texte plus doux pour la catégorie */
+  margin-bottom: 15px;
+}
+
+/* Description */
+.card-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Détails : Prix et statut */
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card-price {
+  font-size: 1.3rem;  /* Prix en vert pour un contraste visuel */
+  font-weight: bold;
+}
+
+.card-status {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+/* Statut disponible ou vendu */
+.card-status.available {
+  color: white;
+}
+
+.card-status.sold {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Pied de la carte */
+.card-footer {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Ajouter un fond coloré au conteneur pour mieux distinguer les cartes */
+.card-container {
+  padding: 30px;
+}
+
+
+.like-button {
+  background-color: #1877f2; /* Couleur bleue similaire à Facebook */
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.like-button i {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.like-button:hover {
+  background-color: #145dbf;
+}
+
+.like-button:active {
+  transform: scale(1.1);
+}
+
+.like-button.animate-like {
+  animation: bounce 0.4s ease-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.like-button {
+  position: absolute;
+  bottom: 150px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f0f0;
+  color: #888; /* Couleur par défaut */
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.like-button.liked {
+  color: #e0245e; /* Couleur rouge vif pour l'état "liké" */
+}
+
+.like-button:hover {
+  background-color: #ffe6e6; /* Couleur de fond en hover */
+}
+
+.like-button i {
+  margin-right: 0.3rem;
+  font-size: 1rem; /* Taille de l'icône */
+}

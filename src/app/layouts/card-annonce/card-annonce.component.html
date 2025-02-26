@@ -1,0 +1,44 @@
+
+<div class="card">
+  <a [routerLink]="['/announcement/details/' ,a.id]">
+
+
+    <img [src]="a.picture" alt="image" class="card-image">
+
+  </a>
+  <div class="card-body">
+    <h2 class="card-title">{{a.title}}</h2>
+    <p class="card-category">{{a.category}} - {{a.address}}</p>
+    <p class="card-description">{{a.description}}</p>
+    <div class="card-details">
+      <div class="card-price">{{a.price | pipeprice}} </div>
+      <div class="card-status" [ngClass]="{'available': a.status === 'disponible', 'sold': a.status === 'vendu'}">
+        {{a.status}}
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <span>Rooms: {{a.roomsNumber}}</span>
+      <span>Date: {{a.datePublication}}</span>
+      <span>Surface: {{a.surface| pipesurface}} </span>
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+      <div class="like-button" (click)="addLike(a)" [ngClass]="{'liked': a.isLiked}">
+        <i class="fa fa-heart"></i>
+        <span>{{ a.nbrLike }}</span>
+      </div>
+
+    </div>
+
+    <div>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+      <div class="like-button" (click)="addLike(a)" [ngClass]="{'liked': a.isLiked}">
+        <i class="fa fa-heart"></i>
+        <span>{{ a.nbrLike }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+

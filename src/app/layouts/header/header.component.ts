@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef } from '@angular/core';
+import { AuthentificationService } from 'src/app/core/authentification.service';
 
 @Component({
   selector: "app-header",
@@ -7,15 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ["./header.component.css"],
 })
 export class HeaderComponent {
-  searchQuery: string = '';
+  
+  constructor(private authserv : AuthentificationService) {
+  }
 
-  constructor(private router: Router) {}
+  isLoggedin : boolean = !!localStorage.getItem('access_token');;
 
-  onSearch() {
-    if (this.searchQuery.trim()) {
-      this.router.navigate(['/announcement/search'], {
-        queryParams: { query: this.searchQuery }
-      });
-    }
+  logout() {
+    this.authserv.logout()
   }
 }

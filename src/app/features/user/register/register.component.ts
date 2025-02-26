@@ -4,6 +4,8 @@ import {Announcement} from "../../../core/models/announcement";
 import {User} from "../../../core/models/User";
 import {UserService} from "../services/user.service";
 import {Router} from "@angular/router";
+import { AuthentificationService } from 'src/app/core/authentification.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -14,12 +16,15 @@ export class RegisterComponent implements OnInit {
   // FormGroup: class that match the form tag in the Template && is a collection of inputs
      formRegister: FormGroup;
      user:User = new User();
-     constructor(private userService: UserService, private router: Router) {}
+     constructor(private userService: UserService, private router: Router, private http: HttpClient) {}
      ngOnInit() {
        this.formRegister= new FormGroup(
          //FormControl: class that match an input in the form
          {firstName: new FormControl('',[Validators.required, Validators.minLength(3)]),
          lastName: new FormControl('',[Validators.required, Validators.minLength(3)]),
+         email: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)]),
+         password : new FormControl('',[Validators.required, Validators.minLength(6)]),
+         role: new FormControl('', [Validators.required, Validators.pattern(/^(role_admin|role_simpleuser)$/)]),
          address: new FormGroup(
            { street: new FormControl('',[Validators.required]),
              city: new FormControl('',[Validators.required]),
@@ -45,13 +50,33 @@ export class RegisterComponent implements OnInit {
       get phoneNumbers(){
        return (this.formRegister.get('phoneNumbers') as FormArray);
       }
+
+
      save(){
        //backend
        this.user = this.formRegister.getRawValue();
        this.userService.addUser(this.user).subscribe(
-         (data:User)=>{this.router.navigateByUrl('user/profile/${data.id}');}
+         (data:User)=>{this.router.navigateByUrl('user/login');}
        )
        //get the set of value of each input in the form
         console.log(this.formRegister.getRawValue())
      }
+
+
+     register(d: any)  {
+      this.http.post<User>('http://localhost:3000/register', d) ;
+    }
+
+  
+
+  // login(d: any) : void {
+  //   console.log(d);
+  //   this.authService.singin(d).subscribe(
+  //     (response) => {
+  //       // Stocker le jeton JWT dans le stockage local 
+  //       localStorage.setItem('access_token', response.accessToken);
+  //       localStorage.setItem('role', response.user.role);
+  //     }
+  //   )
+  // }
 }

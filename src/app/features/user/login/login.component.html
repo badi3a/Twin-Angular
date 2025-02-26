@@ -1,1 +1,66 @@
-<p>login works!</p>
+<form #f="ngForm">
+    <label>email</label>
+    <input  [(ngModel)]="user.email" name="Email" #email="ngModel" />
+  
+    <label>password</label>
+    <input [(ngModel)]="user.password" name="p" #pwd="ngModel" />
+  
+    <button [disabled]="f.invalid" type="submit" (click)="login(user)">Login</button>
+  </form>
+  
+  <style>
+    form {
+      max-width: 50%;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #333;
+    }
+    
+    form input:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    
+    form button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    form button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    
+    form button:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+    
+  </style>

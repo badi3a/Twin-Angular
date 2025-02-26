@@ -1,0 +1,67 @@
+<div class="announcement-details">
+  <div class="details-header">
+    <h2>{{ announcement.title }}</h2>
+    <p class="subtitle">Discover the details of this amazing announcement</p>
+  </div>
+
+  <div class="details-card">
+    <div class="image-container">
+      <img [src]="announcement.picture" alt="Announcement Image" />
+    </div>
+
+    <!-- Mode édition ou affichage des détails -->
+    <div *ngIf="isEditing" class="details-info">
+      <form #f="ngForm">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" name="title" [(ngModel)]="announcement.title"
+                 class="form-control" required minlength="3" maxlength="100">
+        </div>
+
+        <div class="form-group">
+          <label>Category</label>
+          <input type="text" name="category" [(ngModel)]="announcement.category"
+                 class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label>Price</label>
+          <input type="number" name="price" [(ngModel)]="announcement.price"
+                 class="form-control" required min="1000" max="999999999">
+        </div>
+
+        <div class="form-group">
+          <label>Upload Picture</label>
+          <input type="file" (change)="onImageSelect($event)" accept="image/*" class="form-control">
+        </div>
+
+        <div *ngIf="imagePreview">
+          <label>Image Preview</label>
+          <img [src]="imagePreview" alt="Image preview" class="img-fluid image-preview" />
+        </div>
+
+        <button class="btn btn-success" (click)="updateAnnouncement()" [disabled]="f.invalid">Save Changes</button>
+        <button class="btn btn-warning" (click)="toggleEdit()">Cancel</button>
+      </form>
+    </div>
+
+    <!-- Détails statiques quand on n'est pas en mode édition -->
+    <div *ngIf="!isEditing" class="details-info">
+      <p><strong>📍 Address:</strong> {{ announcement.address }}</p>
+      <p><strong>💰 Price:</strong> {{ announcement.price | currency }}</p>
+      <p><strong>🏷️ Category:</strong> {{ announcement.category }}</p>
+    </div>
+  </div>
+
+  <div class="details-actions">
+    <button class="btn btn-danger" (click)="deleteAnnouncement(announcement.id)">
+      <i class="fa fa-trash"></i> Delete
+    </button>
+    <button class="btn btn-primary" (click)="router.navigate(['/announcement/list'])">
+      <i class="fa fa-arrow-left"></i> Back to List
+    </button>
+    <button class="btn btn-warning" *ngIf="!isEditing" (click)="toggleEdit()">
+      <i class="fa fa-edit"></i> Edit
+    </button>
+  </div>
+</div>

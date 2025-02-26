@@ -8,18 +8,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListeComponent } from './liste/liste.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import {AnnouncementService} from "./services/announcement.service";
-import { AnnouncementDetailComponent } from './announcement-detail/announcement-detail.component';
-import { AnnouncementSearchComponent } from './announcement-search/announcement-search.component';
-import { CardAnnouncementComponent } from './card-announcement/card-announcement.component';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { DetailsComponent } from './details/details.component';
+import { CardComponent } from './card/card.component';
+import { FavoritComponent } from './favorit/favorit.component';
+import {CardAnnonceComponent} from "../../layouts/card-annonce/card-annonce.component";
+
 @NgModule({
   declarations: [
     AnnouncementComponent,
     FormComponent,
     ListeComponent,
-    AnnouncementDetailComponent,
-    AnnouncementSearchComponent,
-    CardAnnouncementComponent
+    DetailsComponent,
+    CardComponent,
+    FavoritComponent,
   ],
   imports: [
     CommonModule,
@@ -27,10 +28,12 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     SharedModule,
     HttpClientModule,
-    NgxPaginationModule
+    CardAnnonceComponent,
+    // Import the HTTP client module une atre fois dans cette classe
   ]
   ,
-  providers:[AnnouncementService]
+
+  providers: [AnnouncementService]
 
 })
 export class AnnouncementModule { }

@@ -2,50 +2,56 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Announcement} from "../../../core/models/announcement";
 import {Observable} from "rxjs";
-import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AnnouncementService {
-   urlApi: string= "http://localhost:3000/announcements/";
+   urlApi: string= "https://6762de1017ec5852cae7600e.mockapi.io/twinim/announcements/";
   constructor(private http:HttpClient) { }
+  getLikedAnnouncement(){
+    return this.http.get<Announcement[]>(`${this.urlApi}?isLiked=true`);
+  }
+
   ///CNX Backend Side
   //getAnnouncement
   getAllAnnouncements():Observable<Announcement[]> {
     return this.http.get<Announcement[]>(this.urlApi)
   }
   //addAnnouncement
-  addAnnouncement(announcement: Announcement):Observable<Announcement>{
-    return this.http.post<Announcement>(this.urlApi,announcement)
+  addAnnouncement(objet:Announcement):Observable<Announcement>{
+    return this.http.post<Announcement>(this.urlApi,objet)
   }
+  //getAnnouncement By id
+  getAnnouncementById(id:any){
+    return this.http.get<Announcement>(`${this.urlApi}${id}`)
+  }
+
   //delete
-  // delete
-deleteAnnouncement(id: number): Observable<void> {
+  //search
+  //getbyId
+  //update
+
+
+
+
+
+
+  getAnnoucementBYID(id: any){
+    return this.http.get<Announcement>(`${this.urlApi}${id}`)
+
+}
+
+deletAnnoucement(id: any): Observable<void> {
   return this.http.delete<void>(`${this.urlApi}${id}`);
 }
 
-  //search
-  //getbyId
-  getAnnouncementById(id: number): Observable<Announcement> {
-    return this.http.get<Announcement>(`${this.urlApi}${id}`);
-  }
-  //update
-updateAnnouncement(id: number, updatedAnnouncement: Announcement): Observable<Announcement> {
-  return this.http.put<Announcement>(`${this.urlApi}${id}`, updatedAnnouncement);
-}
-//search
-searchAnnouncements(query: string): Observable<Announcement[]> {
-  console.log('Service searching for:', query);
-  // Using json-server's built-in search functionality
-  return this.getAllAnnouncements().pipe(
-    map(announcements => 
-      announcements.filter(announcement => 
-        announcement.title.toLowerCase().includes(query.toLowerCase())
-      )
-    )
-  );
+
+
+updateAnnouncement(id: any, announcement: Announcement): Observable<void> {
+  return this.http.put<void>(`${this.urlApi}${id}`, announcement);
 }
 
-  getAllAnnou(){
 
-  }
+
+
+
 }

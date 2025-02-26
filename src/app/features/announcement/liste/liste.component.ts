@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Announcement } from 'src/app/core/models/announcement';
 import {AnnouncementService} from "../services/announcement.service";
@@ -10,7 +11,6 @@ import {AnnouncementService} from "../services/announcement.service";
 export class ListeComponent implements OnInit {
 
   list: Announcement[];
-  page: number = 1;
   constructor (private announcementService:AnnouncementService){}
 
 ngOnInit(): void {
@@ -18,35 +18,40 @@ ngOnInit(): void {
   this.announcementService.getAllAnnouncements().subscribe(
     (data:Announcement[]) : void =>{this.list=data;
      console.log(this.list)
-
-
-
     },
   )
 
 }
 
+addLike(a: Announcement): void {
+  // Basculer l'état de "like"
+  a.isLiked = !a.isLiked;
 
-
-addLike(announcement: any): void {
-  if (announcement) {
-    // Toggle like status
-    announcement.isLiked = !announcement.isLiked;
-
-    // Update likes count
-    announcement.nbrLike += announcement.isLiked ? 1 : -1;
-
-    // Update in database
-    this.announcementService.updateAnnouncement(announcement.id, announcement)
-      .subscribe(
-        (updatedAnnouncement) => {
-          console.log('Announcement updated successfully:', updatedAnnouncement);
-        },
-        (error) => {
-          console.error('Error updating announcement:', error);
-        }
-      );
+  // Mettre à jour le nombre de likes
+  if (a.isLiked) {
+    a.nbrLike += 1;
+  } else {
+    a.nbrLike -= 1;
   }
+
+  // Mettre à jour l'annonce côté serveur
+  this.updateAnnouncement(a.id, a);
 }
+
+// Mettre à jour une annonce sur le serveur
+updateAnnouncement(id: any, announcement: Announcement): void {
+  this.announcementService.updateAnnouncement(id, announcement).subscribe(
+    () => {
+      console.log('Annonce mise à jour avec succès:', announcement);
+    },
+    (error) => {
+      console.error('Erreur lors de la mise à jour de l\'annonce :', error);
+      alert('Une erreur est survenue lors de la mise à jour.');
+    }
+  );
+}
+
+
+
 
 }

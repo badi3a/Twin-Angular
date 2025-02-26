@@ -1,336 +1,130 @@
-/*======================================
-//--//-->   NAVBAR
-======================================*/
-
+/* Navbar Styles */
 .navbar-default {
-  transition: all .5s ease-in-out;
-  background-color: #ffffff;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  transition: all 0.5s ease-in-out;
+  background-color: #fff;
+  padding: 20px 0;
   box-shadow: 1px 2px 15px rgba(100, 100, 100, 0.3);
 }
 
-.navbar-default .nav-search {
-  color: #000000;
-  font-size: 1.5rem;
-}
-
-.navbar-default.navbar-reduce {
-  box-shadow: 1px 2px 15px rgba(100, 100, 100, 0.3);
-}
-
-.navbar-default.navbar-trans,
-.navbar-default.navbar-reduce {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.navbar-default.navbar-trans .nav-item,
-.navbar-default.navbar-reduce .nav-item {
-  position: relative;
-  padding-right: 10px;
-  padding-bottom: 8px;
-  margin-left: 0;
-}
-
-.navbar-default.navbar-trans .nav-link,
-.navbar-default.navbar-reduce .nav-link {
-  font-size: 1.1rem;
-  color: #000000;
-  font-weight: 600;
-  letter-spacing: 0.030em;
-  transition: color 0.3s ease-in-out;
-  position: relative;
-  padding-left: 15px;
-  padding-right: 0;
-}
-
-/* Underline effect */
 .navbar-default .nav-link {
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0 15px;
   position: relative;
+  transition: color 0.3s, width 0.3s;
 }
 
 .navbar-default .nav-link:before {
   content: '';
   position: absolute;
   bottom: 5px;
-  left: 14px;
-  width: 0%;  /* Start with no width */
+  left: 15px;
+  width: 0;
   height: 2px;
   background-color: blue;
-  transition: width 0.3s ease-in-out;  /* Animate width */
+  transition: width 0.3s ease-in-out;
 }
 
-/* Hover effect */
-.navbar-default .nav-link:hover:before {
-  width: 90%;  /* Animate to 90% width on hover */
-}
-
-/* Active link underline */
+.navbar-default .nav-link:hover:before,
 .navbar-default .nav-link.active-link:before {
-  width: 100%;  /* Full width for active link */
-  transition: none;  /* Disable transition on active state */
-}
-
-/* Prevent the hover underline animation if the link is already active */
-.navbar-default .nav-link.active-link:hover:before {
-  width: 100%;  /* Ensure the underline stays at 100% when hovering over active */
-  transition: none;  /* Disable transition even when hovered */
-}
-
-/* Links that are not active will animate the underline */
-.navbar-default .nav-link:not(.active-link):hover:before {
-  width: 90%;  /* Ensure hover effect is active on non-active links */
-}
-
-.navbar-default .nav-link.active-link {
-  color: #000000; /* Optional: Maintain color when active */
-}
-
-/* Ensure the underline stays full-width when active */
-.navbar-default.navbar-trans .nav-link.active-link:before,
-.navbar-default.navbar-reduce .nav-link.active-link:before {
-  width: 100%; /* Make sure the active link stays full-width */
-  transition: none;
-}
-
-.navbar-default.navbar-trans .nav-link:hover,
-.navbar-default.navbar-reduce .nav-link:hover {
-  color: #000000;
-}
-
-.navbar-default.navbar-trans .show > .nav-link:before,
-.navbar-default.navbar-trans .active > .nav-link:before,
-.navbar-default.navbar-trans .nav-link.show:before,
-.navbar-default.navbar-trans .nav-link.active:before,
-.navbar-default.navbar-reduce .show > .nav-link:before,
-.navbar-default.navbar-reduce .active > .nav-link:before,
-.navbar-default.navbar-reduce .nav-link.show:before,
-.navbar-default.navbar-reduce .nav-link.active:before {
   width: 90%;
 }
 
-.navbar-default.navbar-reduce {
-  transition: all .5s ease-in-out;
-  padding-top: 19px;
-  padding-bottom: 19px;
-}
-
-
-/* ------ Hamburger Navbar ------ */
 .navbar-toggler {
-  position: relative;
-}
-
-.navbar-toggler:focus,
-.navbar-toggler:active {
-  outline: 0;
+  background: none;
+  border: none;
 }
 
 .navbar-toggler span {
   display: block;
-  background-color: #000000;
   height: 3px;
   width: 25px;
-  margin-top: 4px;
-  margin-bottom: 4px;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-  left: 0;
-  opacity: 1;
-}
-
-.navbar-toggler span:nth-child(1),
-.navbar-toggler span:nth-child(3) {
-  transition: transform .35s ease-in-out;
+  background-color: #000;
+  margin: 4px 0;
+  transition: transform 0.35s ease-in-out;
 }
 
 .navbar-toggler:not(.collapsed) span:nth-child(1) {
-  position: absolute;
-  left: 12px;
-  top: 10px;
-  -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
-  opacity: 0.9;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(2) {
-  height: 12px;
-  visibility: hidden;
-  background-color: transparent;
+  position: absolute;
 }
 
 .navbar-toggler:not(.collapsed) span:nth-child(3) {
-  position: absolute;
-  left: 12px;
-  top: 10px;
-  -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg);
-  opacity: 0.9;
+  position: absolute;
 }
 
-/*======================================
-//--//-->   SEARCH
-======================================*/
+/* Search Box */
 .search-box {
-  width: fit-content;
-  height: fit-content;
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .input-search {
-  height: 50px;
-  width: 50px;
-  border-style: none;
-  padding: 10px;
-  font-size: 18px;
-  letter-spacing: 2px;
-  outline: none;
-  border-radius: 25px;
-  transition: all .5s ease-in-out;
-  background-color: transparent !important;
-  padding-right: 40px;
-  color: black;
-}
-
-.input-search::placeholder {
-  color: black;
-  font-size: 18px;
-  letter-spacing: 2px;
-  font-weight: 100;
-}
-
-.btn-search {
-  width: 50px;
-  height: 50px;
-  border-style: none;
-  font-size: 20px;
-  font-weight: bold;
-  outline: none;
-  cursor: pointer;
-  border-radius: 50%;
-  position: absolute;
-  right: 0px;
-  color: black;
-  background-color: transparent;
-  pointer-events: painted;
-}
-
-.btn-search:focus ~ .input-search {
-  width: 300px;
-  border-radius: 0px;
-  background-color: transparent;
+  height: 40px;
+  border: none;
   border-bottom: 1px solid black;
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  outline: none;
+  font-size: 1rem;
+  transition: width 0.5s;
+  width: 50px;
 }
 
 .input-search:focus {
-  width: 300px;
-  border-radius: 0px;
-  background-color: transparent;
-  border-bottom: 1px solid black;
-  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+  width: 250px;
 }
 
+.btn-search {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
 
-
-/*======================================
-//--//-->   LOGIN + REGISTRATION BUTTONS
-======================================*/
+/* Auth Buttons */
 .auth-buttons .btn {
   border-radius: 25px;
   font-size: 1rem;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
 }
 
-.auth-buttons .btn-login {
-  background-color: white;
-  border: 2px solid #0d6efd; /* Primary color */
+.btn-login {
+  background: white;
   color: #0d6efd;
-}
-
-.auth-buttons .btn-login:hover {
-  background-color: #0d6efd;
-  color: white;
-}
-
-.auth-buttons .btn-register {
-  background-color: #0d6efd; /* Primary color */
-  color: white;
   border: 2px solid #0d6efd;
 }
 
-.auth-buttons .btn-register:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+.btn-login:hover {
+  background: #0d6efd;
+  color: white;
 }
 
+.btn-register {
+  background: #0d6efd;
+  color: white;
+}
+
+.btn-register:hover {
+  background: #0056b3;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .auth-buttons {
     flex-direction: column;
-    width: 100%;
-    margin: 0;
     gap: 1rem;
   }
 
-  .auth-buttons .btn {
-    width: 40%;
-    text-align: center;
-  }
-  .auth-buttons span {
-    text-align: center;
-  }
-
-  .nav-link {
-    width: 100%;
-    text-align: center;
-    margin: 0 auto; /* Center align links */
-  }
-
-  /* Search box visibility */
   .search-box {
-    width: 100%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    align-items: center;
-    border: none;
-    padding-top: 10px;
-    display: flex !important;
-    justify-content: center;
+    margin: 15px 0;
   }
 
-  /* Input search visibility */
   .input-search {
-    width: 65%;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    outline: none;
+    width: 80%;
   }
-
-  .btn-search {
-    font-size: 18px;
-    margin-left: 10px; /* Space between button and input */
-  }
-}
-
-
-
-
-/* Icon inside buttons */
-.fa {
-  font-size: 20px;
-}
-
-.navbar-brand {
-  font-size: 30px;
-}
-.logo
-{
-  margin-right: 10%;
-  margin-left: 0;
 }

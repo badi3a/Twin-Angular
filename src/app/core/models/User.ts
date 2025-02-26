@@ -10,6 +10,8 @@ export class User {
   address: Address;
   phoneNumbers: String[];
   login: string;
+  email: string;
+  role : string;
   password: string;
   picture:string;
   birthday: Date;

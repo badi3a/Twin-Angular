@@ -1,0 +1,75 @@
+/* Container Styling */
+.coming-soon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Title Styling */
+.coming-soon-title {
+  font-size: 3em;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Text Styling */
+.coming-soon-text {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 600px;
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Image Animation */
+.coming-soon-animation img {
+  width: 300px;
+  height: auto;
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .coming-soon-title {
+    font-size: 2.5em;
+  }
+
+  .coming-soon-text {
+    font-size: 1em;
+  }
+
+  .coming-soon-animation img {
+    width: 200px;
+  }
+}

@@ -1,11 +1,15 @@
-<h2>List of announcements</h2>
+<div id="parent">
+  <div class="container">
 
-<div class="card-container">
-  <app-card-announcement 
-    *ngFor="let a of list | paginate: { itemsPerPage: 15, currentPage: page }" 
-    [announcement]="a"
-    (likeClicked)="addLike($event)">
-  </app-card-announcement>
+    <div class="card-container">
+       <app-card *ngFor="let announcement of list"
+                 [a]="announcement"
+                 (notifyParent)="addLike($event)"
+       >
+
+       </app-card>
+
+    </div>
+  </div>
+
 </div>
-
-<pagination-controls (pageChange)="page = $event"></pagination-controls>

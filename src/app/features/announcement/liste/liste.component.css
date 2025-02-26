@@ -1,55 +1,9 @@
-body {
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-  }
-  
+
+  /* Conteneur de cartes */
   .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
-    background-color: #eef2f7;
-  }
-  
-  /* Pagination Styles */
-  :host ::ng-deep .ngx-pagination {
-    padding: 20px 0;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-  }
 
-  :host ::ng-deep .ngx-pagination li {
-    border-radius: 4px;
-    background: #fff;
-    border: 1px solid #dee2e6;
   }
-
-  :host ::ng-deep .ngx-pagination a,
-  :host ::ng-deep .ngx-pagination button {
-    color: #4a90e2 !important;
-    padding: 8px 15px !important;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  :host ::ng-deep .ngx-pagination .current {
-    background: #4a90e2 !important;
-    border-color: #4a90e2;
-    color: #fff !important;
-    padding: 8px 15px !important;
-  }
-
-  :host ::ng-deep .ngx-pagination a:hover,
-  :host ::ng-deep .ngx-pagination button:hover {
-    background: #e9ecef;
-    text-decoration: none;
-  }
-
-  :host ::ng-deep .ngx-pagination .disabled {
-    color: #6c757d !important;
-    cursor: not-allowed;
-  }
-  

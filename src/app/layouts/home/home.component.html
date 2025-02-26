@@ -1,1 +1,27 @@
-<p>home works!</p>
+<div class="shadow border filter-data">
+  <h2 class="text-dark text-center">Search By</h2>
+  <form (ngSubmit)="search()">
+    <div class="row g-3 p-4">
+      <div class="col-md-4">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" id="title" [(ngModel)]="title" name="title" class="form-control" placeholder="Enter title" />
+      </div>
+
+      <div class="col-md-4">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" id="price" [(ngModel)]="price" name="price" class="form-control" placeholder="Enter price" />
+      </div>
+
+      <div class="col-md-4">
+        <label for="category" class="form-label">Category</label>
+        <select id="category" [(ngModel)]="category" name="category" class="form-select">
+          <option value="">Select Category</option>
+          <option *ngFor="let category of list" [value]="category.category">{{ category.category }}</option>
+        </select>
+      </div>
+      <div class="col-12 text-center mt-3">
+        <button type="submit" class="btn btn-primary w-50">Search</button>
+      </div>
+    </div>
+  </form>
+</div>

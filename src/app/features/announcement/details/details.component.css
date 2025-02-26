@@ -1,0 +1,107 @@
+.announcement-details {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+  }
+  
+  .details-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .details-header h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .details-header .subtitle {
+    font-size: 16px;
+    color: #7f8c8d;
+  }
+  
+  .details-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-container:hover img {
+    transform: scale(1.05);
+  }
+  
+  .details-info {
+    text-align: left;
+    margin-top: 20px;
+    width: 80%;
+  }
+  
+  .details-info p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .details-info strong {
+    font-weight: bold;
+    color: #34495e;
+  }
+  
+  .details-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .details-actions .btn {
+    margin: 0 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .details-actions .btn-danger {
+    background: #e74c3c;
+    color: #fff;
+  }
+  
+  .details-actions .btn-danger:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(231, 76, 60, 0.4);
+  }
+  
+  .details-actions .btn-primary {
+    background: #3498db;
+    color: #fff;
+  }
+  
+  .details-actions .btn-primary:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
+  }
+  
