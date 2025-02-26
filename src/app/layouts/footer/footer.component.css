@@ -1,78 +1,62 @@
-body{margin-top:20px;}
-.bg-footer {
-  background-color: #3b4757 !important;
-}
-.footer {
-  padding: 60px 0;
-  position: relative;
-  color: #adb5bd;
-}
-
-.footer .logo-footer {
-  font-weight: 700;
-  font-size: 22px;
-  padding: 3px 0;
-  letter-spacing: 1px;
-}
-
-.footer .footer-head {
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  font-weight: 600;
-}
-
-.footer .text-foot {
-  color: #adb5bd;
-}
-
-.footer .footer-list {
-  margin-bottom: 0;
-}
-
-.footer .footer-list li {
-  margin-bottom: 10px;
-}
-
-.footer .footer-list li a {
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.footer .footer-list li a:hover {
-  color: #6dc77a !important;
-}
-
-.footer .footer-list li:last-child {
-  margin-bottom: 0;
-}
-
-.footer.footer-bar {
-  padding: 30px 0;
-  border-top: 1px solid #6c757d;
-}
-
-.footer.footer-bar .payment-cards img {
-  height: 25px;
-}
-
-.social-icon.social li a {
-  color: #adb5bd;
-  border-color: #adb5bd;
-}
-.social-icon li a {
-  color: #35404e;
-  border: 1px solid #35404e;
-  display: inline-block;
-  height: 32px;
+/* General Footer Styling */
+footer {
+  background-color: #f8f9fa;
+  padding: 20px;
   text-align: center;
-  font-size: 15px;
-  width: 32px;
-  line-height: 30px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  overflow: hidden;
-  position: relative;
+  font-family: Arial, sans-serif;
 }
-.rounded {
-  border-radius: 5px !important;
+
+footer h4 {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Profile Images */
+.profile-img, .profile-img-leader {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Leader Profile Image (Slightly Larger) */
+.profile-img-leader {
+  width: 120px;
+  height: 120px;
+  border: 3px solid #444;
+}
+
+/* Hover Effect */
+.profile-img:hover, .profile-img-leader:hover {
+  transform: scale(1.1);
+}
+
+/* Profile Names */
+.profile-name {
+  margin-top: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+.profile-name-leader {
+  margin-top: 10px;
+  color: #222;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  footer div {
+    flex: 1 1 100%;
+  }
+  .profile-img, .profile-img-leader {
+    width: 80px;
+    height: 80px;
+  }
+  .profile-name, .profile-name-leader {
+    font-size: 12px;
+  }
 }

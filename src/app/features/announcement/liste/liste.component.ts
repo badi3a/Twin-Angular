@@ -18,9 +18,6 @@ ngOnInit(): void {
   this.announcementService.getAllAnnouncements().subscribe(
     (data:Announcement[]) : void =>{this.list=data;
      console.log(this.list)
-
-
-
     },
   )
 

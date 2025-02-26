@@ -30,8 +30,14 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/announcement/list" routerLinkActive="active" aria-label="Go to Announcement">Announcement</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item"  *ngIf="isLoggedin">
           <a class="nav-link" routerLink="/announcement/new" routerLinkActive="active" aria-label="Go to Hello">New Announcement</a>
+        </li>
+        <li class="nav-item"  *ngIf="isLoggedin">
+        <a class="nav-link" routerLink="/announcement/favorit" routerLinkActive="active" aria-label="Go to Hello">Favorit List</a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active" aria-label="Go to Hello">About the project</a>
         </li>
       </ul>
 
@@ -49,7 +55,7 @@
       </div>
 
       <!-- Auth Buttons (now part of collapsible menu) -->
-      <div class="auth-buttons d-flex gap-3 justify-content-center align-items-center">
+      <div *ngIf="! isLoggedin" class="auth-buttons d-flex gap-3 justify-content-center align-items-center">
         <button
           class="btn btn-login px-4 py-2"
           routerLink="/user/login"
@@ -66,6 +72,18 @@
         >
           <i class="fa fa-user-plus me-2" aria-hidden="true"></i>
           <span>Register</span>
+        </button>
+      </div>
+    
+      <div  *ngIf="isLoggedin" class="auth-buttons d-flex gap-3 justify-content-center align-items-center">
+        <button
+          class="btn btn-login px-4 py-2"
+          routerLink="/user/login"
+          aria-label="Login to your account"
+          (click)="logout()"
+        >
+          <i class="fa fa-sign-in me-2" aria-hidden="true"></i>
+          <span>logout</span>
         </button>
       </div>
     </div>

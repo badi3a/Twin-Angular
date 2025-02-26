@@ -9,11 +9,15 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { NotFoundComponent } from './layouts/not-found/not-found.component';
 import {HttpClientModule} from "@angular/common/http";
 import {SharedModule} from "./shared/shared.module";
-import { BannerComponent } from './layouts/components/home/banner/banner.component';
-import { CardAnnouncementComponent } from './layouts/components/home/announcement/card-announcement/card-announcement.component';
-import { AllAnnouncementComponent } from './layouts/components/home/announcement/all-announcement/all-announcement.component';
 import { AnnouncementService } from './features/announcement/services/announcement.service';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
+=======
+import {AnnouncementModule} from "./features/announcement/announcement.module";
+import {CardComponent} from "./features/announcement/card/card.component";
+import {CardAnnonceComponent} from "./layouts/card-annonce/card-annonce.component";
+import { AboutusComponent } from './layouts/aboutus/aboutus.component';
+>>>>>>> master
 
 
 
@@ -25,10 +29,14 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
+<<<<<<< HEAD
     BannerComponent,
     CardAnnouncementComponent,
     AllAnnouncementComponent,
    
+=======
+    AboutusComponent,
+>>>>>>> master
 
   ],
   imports: [
@@ -36,7 +44,9 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     AppRoutingModule,
     HttpClientModule, // Import the HTTP client module
-    SharedModule ,
+    SharedModule,
+    AnnouncementModule,
+    CardAnnonceComponent,
   ],
   providers: [AnnouncementService],
   bootstrap: [AppComponent]

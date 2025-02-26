@@ -15,11 +15,11 @@ export class DetailsComponent implements OnInit{
   isEditing: boolean = false; // Pour savoir si on est en mode édition
   imagePreview: string | ArrayBuffer | null = null;
 
-  
-  constructor(private activatedRoute: ActivatedRoute 
+
+  constructor(private activatedRoute: ActivatedRoute
     , private announcementService: AnnouncementService , public router: Router) {
   }
-    
+
     ngOnInit() {
 
       let id:any=this.activatedRoute.snapshot.params['id']
@@ -29,7 +29,7 @@ export class DetailsComponent implements OnInit{
 
           this.announcement=data;
           console.log(this.announcement);
-          
+
 
         }
 
@@ -77,7 +77,7 @@ export class DetailsComponent implements OnInit{
         this.announcementService.deletAnnoucement(id).subscribe(
           () => {
             console.log('Annonce supprimée avec succès');
-            this.router.navigate(['/list']);  // Utilisation du Router pour la redirection
+            this.router.navigate(['/announcement/list']);  // Utilisation du Router pour la redirection
           },
           (error) => {
             console.error('Erreur lors de la suppression de l\'annonce :', error);
@@ -86,8 +86,8 @@ export class DetailsComponent implements OnInit{
       }
 
     }
-   
-     
+
+
 
 
 }

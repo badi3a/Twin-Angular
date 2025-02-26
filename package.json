@@ -22,9 +22,11 @@
     "font-awesome": "^4.7.0",
     "json": "^11.0.0",
     "json-serve": "^0.1.0",
-    "json-server": "^1.0.0-beta.3",
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "twin-im": "file:",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
