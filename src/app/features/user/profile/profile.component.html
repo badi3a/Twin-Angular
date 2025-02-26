@@ -1,1 +1,62 @@
+<<<<<<< HEAD
+<html lang="en">
+
+<body>
+  <div class="profile-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img alt="User Pic" [src]="user.picture" class="img-circle">
+        <h3>{{ user.firstName }} </h3>
+      </div>
+      <nav class="menu">
+        <ul>
+          <!-- <li><a href="#">View public profile</a></li> -->
+          <li class="active"><a href="#">Profile</a></li>
+       
+        </ul>
+      </nav>
+    </aside>
+    <main class="profile-main">
+      <h1>Public Profile</h1>
+      <p> information about yourself</p>
+      <form class="profile-form">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" value="{{ user.firstName }} {{ user.lastName }}">
+          </div>
+          
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" value="{{ user.lastName }}">
+        </div>
+        <div class="form-group">
+          <label for="headline">Adress</label>
+          <input type="text" value="{{ user.address.city }} {{ user.address.street }} {{ user.address.zipCode }}">
+          
+        </div>
+        <div class="form-group">
+          <label for="bio">Date of birth</label>
+          <input type="text" value=" {{ user.birthday }}">
+        </div>
+        <div class="form-group">
+            <label for="bio">Phone Number</label>
+            <input type="text" value=" {{ user.phoneNumbers }}">
+          </div>
+          <h1>Account Security</h1>
+          <p> information about your Account</p>
+          <div class="form-group">
+            <label for="bio">Phone Number</label>
+            <input type="text" value=" {{ user.login }}">
+          </div>
+          <div class="form-group">
+            <label for="bio">Phone Number</label>
+            <input type="text" value=" {{ user.password }}">
+          </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
+=======
 <p>bienvenue</p>
+>>>>>>> master

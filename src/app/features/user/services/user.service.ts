@@ -24,4 +24,8 @@ export class UserService {
   deleteUser(id:number):Observable<User> {
     return this.http.delete<User>(`${this.api}/users/${id}`)
   }
+     //getById
+     getUserById(id:any):Observable<User>{
+      return this.http.get<User>(`${this.api}/users/${id}`);
+    }
 }

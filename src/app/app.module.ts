@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {FormsModule} from "@angular/forms";
+
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,10 +10,14 @@ import { NotFoundComponent } from './layouts/not-found/not-found.component';
 import {HttpClientModule} from "@angular/common/http";
 import {SharedModule} from "./shared/shared.module";
 import { AnnouncementService } from './features/announcement/services/announcement.service';
+<<<<<<< HEAD
+import { FormsModule } from '@angular/forms';
+=======
 import {AnnouncementModule} from "./features/announcement/announcement.module";
 import {CardComponent} from "./features/announcement/card/card.component";
 import {CardAnnonceComponent} from "./layouts/card-annonce/card-annonce.component";
 import { AboutusComponent } from './layouts/aboutus/aboutus.component';
+>>>>>>> master
 
 
 
@@ -25,7 +29,14 @@ import { AboutusComponent } from './layouts/aboutus/aboutus.component';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
+<<<<<<< HEAD
+    BannerComponent,
+    CardAnnouncementComponent,
+    AllAnnouncementComponent,
+   
+=======
     AboutusComponent,
+>>>>>>> master
 
   ],
   imports: [
